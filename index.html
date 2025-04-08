@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GUAI BORDEL'SS 2025</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    header img {
+      height: 50px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #ddd;
+      flex-wrap: wrap;
+    }
+    nav a {
+      padding: 1rem;
+      text-decoration: none;
+      color: #333;
+    }
+    nav a:hover {
+      background-color: #bbb;
+    }
+    .page {
+      display: none;
+      padding: 1rem;
+    }
+    .active {
+      display: block;
+    }
+    h2 {
+      color: #0077cc;
+    }
+    .tab-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .tab-buttons button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #0077cc;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .tab-buttons button:hover {
+      background-color: #005fa3;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-active {
+      display: block;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo" />
+    <h1>GUAI BORDEL'SS 2025</h1>
+  </header>
+  <nav>
+    <a href="#" onclick="showPage('resultats')">Sport</a>
+    <a href="#" onclick="showPage('classement')">Classement</a>
+    <a href="#" onclick="showPage('infos')">Infos pratiques</a>
+  </nav>
+
+  <div id="resultats" class="page active">
+    <h2>Résultats par sport</h2>
+    <div class="tab-buttons">
+      <button onclick="showTab('football')">Football</button>
+      <button onclick="showTab('rugby')">Rugby</button>
+      <button onclick="showTab('natation')">Natation</button>
+      <button onclick="showTab('handball')">Handball</button>
+      <button onclick="showTab('athletisme')">Athlétisme</button>
+      <button onclick="showTab('badminton')">Badminton</button>
+    </div>
+    <div id="football" class="tab-content tab-active">
+      <h3>Football</h3>
+      <ul>
+        <li>Match 1 : Équipe A 2 - 1 Équipe B</li>
+      </ul>
+    </div>
+    <div id="rugby" class="tab-content">
+      <h3>Rugby</h3>
+      <ul>
+        <li>Match 1 : Équipe C 15 - 10 Équipe D</li>
+      </ul>
+    </div>
+    <div id="natation" class="tab-content">
+      <h3>Natation</h3>
+      <ul>
+        <li>Course 1 : Équipe E - 1min12s</li>
+      </ul>
+    </div>
+    <div id="handball" class="tab-content">
+      <h3>Handball</h3>
+      <ul>
+        <li>Match 1 : Équipe F 22 - 19 Équipe G</li>
+      </ul>
+    </div>
+    <div id="athletisme" class="tab-content">
+      <h3>Athlétisme</h3>
+      <ul>
+        <li>Course 100m : Équipe H - 11s</li>
+      </ul>
+    </div>
+    <div id="badminton" class="tab-content">
+      <h3>Badminton</h3>
+      <ul>
+        <li>Match 1 : Équipe I 2 - 0 Équipe J</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="classement" class="page">
+    <h2>Classement</h2>
+    <p>(Système à relier à un fichier ou une base de données pour s’adapter automatiquement aux résultats)</p>
+    <ol>
+      <li>Équipe A - 10 pts</li>
+      <li>Équipe C - 8 pts</li>
+      <li>Équipe F - 7 pts</li>
+      <!-- classement dynamique possible via Google Sheets ou base Firebase -->
+    </ol>
+  </div>
+
+  <div id="infos" class="page">
+    <h2>Informations utiles</h2>
+    <p>📍 Lieu : Stade Municipal de Bordeaux</p>
+    <p>🕒 Horaires : 9h - 18h</p>
+    <p>🍽️ Restauration disponible sur place</p>
+    <p>📞 Contact : tournoi@exemple.com</p>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('tab-active'));
+      document.getElementById(tabId).classList.add('tab-active');
+    }
+  </script>
+</body>
+</html>
